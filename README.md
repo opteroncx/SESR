@@ -12,7 +12,7 @@ SESR: Single Image Super Resolution with Recursive Squeeze and Excitation Networ
 | BSD100    | 27.42/ 0.737      | 
 | Urban100    | 25.42/ 0.771      | 
 ### Compare with other methods
-![](https://github.com/opteroncx/SESR/raw/master/fig.png)  
+![](https://github.com/opteroncx/SESR/raw/master/nf.png)  
 ### Requirement
     Python 2.7
     Pytorch 0.2.0
