@@ -3,7 +3,8 @@ SESR: Single Image Super Resolution with Recursive Squeeze and Excitation Networ
 ---
 ![](https://github.com/opteroncx/SESR/raw/master/f1.png)  
 ### Quality for scale x4
-Trained with yang91+bsd200
+    Trained with yang91+bsd200
+---
 | DataSet/Method        | PSNR/SSIM|
 | ------------- | -----:|
 | Set5      | 31.84/ 0.891      |
