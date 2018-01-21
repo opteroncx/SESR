@@ -1,6 +1,7 @@
 # SESR
 PyTorch implementation of SESR: Single Image Super Resolution with Recursive Squeeze and Excitation Networks
 ---
+![](https://github.com/opteroncx/SESR/raw/master/f1s.png)  
 ### Quality for scale x4
 | DataSet/Method        | PSNR/SSIM|
 | ------------- | -----:|
@@ -8,7 +9,7 @@ PyTorch implementation of SESR: Single Image Super Resolution with Recursive Squ
 | Set14     | 28.32/ 0.784      | 
 | BSD100    | 27.42/ 0.737      | 
 | Urban100    | 25.42/ 0.771      | 
-
+![](https://github.com/opteroncx/SESR/raw/master/fig.png)  
 ### Requirement
     Python 2.7
     Pytorch 0.2.0
