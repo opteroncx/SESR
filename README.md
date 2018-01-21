@@ -1,9 +1,10 @@
 # SESR
 SESR: Single Image Super Resolution with Recursive Squeeze and Excitation Networks (Submitted to ICPR 2018)
 ---
-![](https://github.com/opteroncx/SESR/raw/master/f1s.png)  
+![](https://github.com/opteroncx/SESR/raw/master/f1.png)  
 ### Quality for scale x4
-| DataSet/Method        | PSNR/SSIM|
+Trained with yang91+bsd200
+| DataSet/Method        | PSNR/SSIM|
 | ------------- | -----:|
 | Set5      | 31.84/ 0.891      |
 | Set14     | 28.32/ 0.784      | 
