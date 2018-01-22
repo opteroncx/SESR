@@ -1,7 +1,7 @@
 # SESR
 SESR: Single Image Super Resolution with Recursive Squeeze and Excitation Networks (Submitted to ICPR 2018)
 ---
-![](https://github.com/opteroncx/SESR/raw/master/f1.png)  
+![](https://github.com/opteroncx/SESR/raw/master/figures/f1.png)  
 ### Quality for scale x4
     Trained on yang91+bsd200, the default recursion depth for each branch is set to 4
 ---
@@ -12,7 +12,7 @@ SESR: Single Image Super Resolution with Recursive Squeeze and Excitation Networ
 | BSD100    | 27.42/ 0.737      | 
 | Urban100    | 25.42/ 0.771      | 
 ### Compare with other methods
-![](https://github.com/opteroncx/SESR/raw/master/nf.png)  
+![](https://github.com/opteroncx/SESR/raw/master/figures/f2.png)  
 ### Requirement
     Python 2.7
     Pytorch 0.2.0
