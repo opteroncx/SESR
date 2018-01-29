@@ -16,10 +16,10 @@ SESR: Single Image Super Resolution with Recursive Squeeze and Excitation Networ
 ---
 | DataSet/Method        | PSNR/SSIM|
 | ------------- | -----:|
-| Set5      | 32.01/ 0.893      |
-| Set14     | 28.41/ 0.786      | 
-| BSD100    | 27.45/ 0.739      | 
-| Urban100    | 25.72/ 0.781      | 
+| Set5      | 32.11/ 0.895      |
+| Set14     | 28.46/ 0.787      | 
+| BSD100    | 27.53/ 0.739      | 
+| Urban100    | 25.85/ 0.784      | 
 ### Compare with other methods
 ![](https://github.com/opteroncx/SESR/raw/master/figures/f2.png)  
 ### Requirement
