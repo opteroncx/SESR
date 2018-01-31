@@ -10,7 +10,7 @@ SESR: Single Image Super Resolution with Recursive Squeeze and Excitation Networ
 | Set5      | 31.84/ 0.891      |26.35/ 0.742      |
 | Set14     | 28.32/ 0.784      |24.41/ 0.637      | 
 | BSD100    | 27.42/ 0.737      |24.65/ 0.602      | 
-| Urban100  | 25.42/ 0.771      |21.82/ 0.595      | 
+| Urban100  | 25.42/ 0.771      | 21.82/ 0.595      | 
 ---
     Trained on div2k, r=4
 ---
@@ -33,3 +33,10 @@ SESR: Single Image Super Resolution with Recursive Squeeze and Excitation Networ
     python test.py --cuda
 ### Do Super resolution on your own images
     python test.py --cuda --mode sr --testdir path_to_your_image
+
+Reference
+---
+https://github.com/twtygqyy/pytorch-LapSRN
+https://github.com/jiny2001/dcscn-super-resolution
+https://github.com/jmiller656/EDSR-Tensorflow
+https://github.com/grevutiu-gabriel/python-ssim/blob/master/python-ssim.py
