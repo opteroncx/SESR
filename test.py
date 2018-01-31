@@ -84,20 +84,13 @@ def predict(img_read,save,convert,eva,name):
     if convert:
         if eva:
             h,w,_=img_read.shape
-            #im_gt_y,U,V=getYUV(img_read)
             im_gt_y=convert_rgb_to_y(img_read)
             gt_yuv=convert_rgb_to_ycbcr(img_read)
             im_gt_y=im_gt_y.astype("float32")
-            #print(im_gt_y.shape)
-            #img_y=cv2.resize(im_gt_y,(w//opt.scale,h//opt.scale),interpolation=cv2.INTER_CUBIC)
-            #gt=Image.fromarray(im_gt_y)
-            #lr=gt.resize((w//opt.scale,h//opt.scale),Image.BICUBIC)
-            #img_y=np.array(lr)
             sc=1.0/opt.scale
             img_y=resize_image_by_pil(im_gt_y,sc)
             img_y=img_y[:,:,0]
             im_gt_y=im_gt_y[:,:,0]
-            #img_y=getYUV(res)
         else:
             img_y=getY(img_read)
     else:
@@ -105,7 +98,6 @@ def predict(img_read,save,convert,eva,name):
         im_gt_y=im_gt_y.astype("float32")
     im_input = img_y/255.
     im_input = Variable(torch.from_numpy(im_input).float()).view(1, -1, im_input.shape[0], im_input.shape[1])
-    #使用cuda加速
     model = torch.load(opt.model)["model"]
     if cuda:
         model = model.cuda()
@@ -120,10 +112,8 @@ def predict(img_read,save,convert,eva,name):
         HR_2x = HR_2x[-1].cpu()
         im_h_y = HR_2x.data[0].numpy().astype(np.float32)
     elif opt.scale ==4:
-        #HR_4x是放大4倍的计算graph
         HR_4x = HR_4x[-1].cpu()
         im_h_y = HR_4x.data[0].numpy().astype(np.float32)
-        #print im_h_y.shape
     else:
         print('input wrong scale')
 
@@ -132,7 +122,6 @@ def predict(img_read,save,convert,eva,name):
     im_h_y[im_h_y>255.] = 255.
     im_h_y = im_h_y[0,:,:]
     if save:
-        #recon= cv2.cvtColor(np.stack([im_gt_y, U, V], axis=-1), cv2.COLOR_YUV2RGB)
         recon=convert_y_and_cbcr_to_rgb(im_h_y, gt_yuv[:, :, 1:3])
         save_figure(recon,name)
     if eva:
