@@ -15,7 +15,7 @@ parser = argparse.ArgumentParser(description="PyTorch LapSRN")
 parser.add_argument("--batchSize", type=int, default=64, help="training batch size")
 parser.add_argument("--nEpochs", type=int, default=100, help="number of epochs to train for")
 parser.add_argument("--lr", type=float, default=1e-4, help="Learning Rate. Default=1e-4")
-parser.add_argument("--step", type=int, default=100, help="Sets the learning rate to the initial LR decayed by momentum every n epochs, Default: n=10")
+parser.add_argument("--step", type=int, default=300, help="Sets the learning rate to the initial LR decayed by momentum every n epochs, Default: n=300")
 parser.add_argument("--cuda", action="store_true", help="Use cuda?")
 parser.add_argument("--resume", default="", type=str, help="Path to checkpoint (default: none)")
 parser.add_argument("--start-epoch", default=1, type=int, help="Manual epoch number (useful on restarts)")
@@ -119,11 +119,11 @@ def train(training_data_loader, optimizer, model, criterion, epoch):
             print("===> Epoch[{}]({}/{}): Loss: {:.10f}".format(epoch, iteration, len(training_data_loader), loss.data[0]))
 
 def save_checkpoint(model, epoch):
-    model_folder = "model_adam/"
-    model_out_path = model_folder + "model_epoch_{}.pth".format(epoch)
+    savedir = "checkpoints/"
+    model_out_path = savedir + "model_epoch_{}.pth".format(epoch)
     state = {"epoch": epoch ,"model": model}
-    if not os.path.exists(model_folder):
-        os.makedirs(model_folder)
+    if not os.path.exists(savedir):
+        os.makedirs(savedir)
 
     torch.save(state, model_out_path)
 
