@@ -11,16 +11,16 @@ https://arxiv.org/abs/1801.10319
 | Set5      | 31.84/ 0.891      |26.35/ 0.742      |
 | Set14     | 28.32/ 0.784      |24.41/ 0.637      | 
 | BSD100    | 27.42/ 0.737      |24.65/ 0.602      | 
-| Urban100  | 25.42/ 0.771      | 21.82/ 0.595      | 
+| Urban100  | 25.42/ 0.771      |  21.82/ 0.595      | 
 ---
     Trained on div2k, r=4
 ---
 | DataSet/Method        | PSNR/SSIM|
 | ------------- | -----:|
 | Set5      | 32.11/ 0.895      |
-| Set14     | 28.46/ 0.787      | 
+| Set14     | 28.47/ 0.787      | 
 | BSD100    | 27.53/ 0.739      | 
-| Urban100    | 25.85/ 0.784      | 
+| Urban100    | 25.86/ 0.784      | 
 ### Compare with other methods
 ![](https://github.com/opteroncx/SESR/raw/master/figures/f2.png)  
 ### Requirement
@@ -37,7 +37,7 @@ https://arxiv.org/abs/1801.10319
 
 Reference
 ---
-	https://github.com/twtygqyy/pytorch-LapSRN
-	https://github.com/jiny2001/dcscn-super-resolution
-	https://github.com/jmiller656/EDSR-Tensorflow
-	https://github.com/grevutiu-gabriel/python-ssim/blob/master/python-ssim.py
+https://github.com/twtygqyy/pytorch-LapSRN
+https://github.com/jiny2001/dcscn-super-resolution
+https://github.com/jmiller656/EDSR-Tensorflow
+https://github.com/grevutiu-gabriel/python-ssim/blob/master/python-ssim.py
