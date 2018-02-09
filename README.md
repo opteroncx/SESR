@@ -37,7 +37,7 @@ https://arxiv.org/abs/1801.10319
 
 Reference
 ---
-https://github.com/twtygqyy/pytorch-LapSRN
-https://github.com/jiny2001/dcscn-super-resolution
-https://github.com/jmiller656/EDSR-Tensorflow
-https://github.com/grevutiu-gabriel/python-ssim/blob/master/python-ssim.py
+  https://github.com/twtygqyy/pytorch-LapSRN
+  https://github.com/jiny2001/dcscn-super-resolution
+  https://github.com/jmiller656/EDSR-Tensorflow
+  https://github.com/grevutiu-gabriel/python-ssim/blob/master/python-ssim.py
