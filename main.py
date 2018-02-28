@@ -11,7 +11,7 @@ from model import Net, L1_Charbonnier_loss
 from dataset import DatasetFromHdf5
 
 # Training settings
-parser = argparse.ArgumentParser(description="PyTorch LapSRN")
+parser = argparse.ArgumentParser(description="Modified from PyTorch LapSRN")
 parser.add_argument("--batchSize", type=int, default=64, help="training batch size")
 parser.add_argument("--nEpochs", type=int, default=100, help="number of epochs to train for")
 parser.add_argument("--lr", type=float, default=1e-4, help="Learning Rate. Default=1e-4")
@@ -83,7 +83,6 @@ def main():
         save_checkpoint(model, epoch)
 
 def adjust_learning_rate(optimizer, epoch):
-    """Sets the learning rate to the initial LR decayed by 10 every 10 epochs"""
     lr = opt.lr * (0.1 ** (epoch // opt.step))
     return lr
 
