@@ -1,5 +1,5 @@
 # SESR
-SESR: Single Image Super Resolution with Recursive Squeeze and Excitation Networks (Submitted to ICPR 2018)
+SESR: Single Image Super Resolution with Recursive Squeeze and Excitation Networks (To appear in ICPR 2018)
 https://arxiv.org/abs/1801.10319
 ---
 ![](https://github.com/opteroncx/SESR/raw/master/figures/f1.png)  
