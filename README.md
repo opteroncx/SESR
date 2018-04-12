@@ -4,7 +4,7 @@ https://arxiv.org/abs/1801.10319
 ---
 ![](https://github.com/opteroncx/SESR/raw/master/figures/f1.png)  
 ### Quality for scale x4 and x8
-    Trained on yang91+bsd200, the default recursion depth for each branch is set to 4
+    Trained on yang91+bsd200+general100, the default recursion depth for each branch is set to 4
 ---
 | DataSet/Method        | PSNR/SSIM x4| PSNR/SSIM x8|
 | ------------- | -----| -----:|
