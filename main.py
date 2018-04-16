@@ -130,10 +130,7 @@ def save_checkpoint(model, epoch):
 
 def branchLoss(imglist,img,criterion):
     # for multi supervised mode
-    loss=0
-    for i in range(len(imglist)):
-        loss=loss+criterion(imglist[i], img)
-    loss=loss/len(imglist)
+    loss = criterion(imglist[i], img)
     return loss
 
 if __name__ == "__main__":

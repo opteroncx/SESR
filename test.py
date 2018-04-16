@@ -61,7 +61,7 @@ def evaluate_by_path(path):
     eva=True
     convert=True
     for pimg in pimages:
-        img=cv2.imread(path+'/'+pimg)
+        img = np.array(Image.open(path+'/'+pimg))
         psnr,ssim=predict(img,save,convert,eva,pimg)
         s_psnr+=psnr
         s_ssim+=ssim
@@ -133,11 +133,6 @@ def predict(img_read,save,convert,eva,name):
     else:
         print("doing super resolution")
 
-def getYUV(content_rgb):
-    image_YUV = cv2.cvtColor(content_rgb, cv2.COLOR_RGB2YUV)
-    Y_i, U_i, V_i = cv2.split(image_YUV)
-    return Y_i, U_i, V_i
-
 def print_summary(psnr,ssim):
     print("Scale=",opt.scale)
     print("PSNR=", psnr)
@@ -149,17 +144,15 @@ def save_figure(img,name):
     if not os.path.exists(out_path):
         os.mkdir(out_path)
     print 'saved '+name
-    cv2.imwrite(out_path+name[:-4]+'.jpg',img)
+    img = np.uint8(img)
+    im = Image.fromarray(img)
+    im.save(out_path+name[:-4]+'.png')
 
 def PSNR(pred, gt, shave_border=0):
     height, width = pred.shape[:2]
     pred = pred[shave_border:height - shave_border, shave_border:width - shave_border]
     gt = gt[shave_border:height - shave_border, shave_border:width - shave_border]
-    imdff = pred - gt
-    rmse = math.sqrt(np.mean(imdff ** 2))
-    if rmse == 0:
-        return 100
-    return 20 * math.log10(255.0 / rmse)
+    return measure.compare_psnr(gt,pred,255)
 
 def convert_rgb_to_y(image, jpeg_mode=False, max_value=255.0):
     if len(image.shape) <= 2 or image.shape[2] == 1:

@@ -3,24 +3,16 @@ SESR: Single Image Super Resolution with Recursive Squeeze and Excitation Networ
 https://arxiv.org/abs/1801.10319
 ---
 ![](https://github.com/opteroncx/SESR/raw/master/figures/f1.png)  
-### Quality for scale x4 and x8
-    Trained on yang91+bsd200+general100, the default recursion depth for each branch is set to 4
----
-| DataSet/Method        | PSNR/SSIM x4| PSNR/SSIM x8|
-| ------------- | -----| -----:|
-| Set5      | 31.84/ 0.891      |26.55/ 0.752      |
-| Set14     | 28.32/ 0.784      |24.54/ 0.42      | 
-| BSD100    | 27.42/ 0.737      |24.71/ 0.605      | 
-| Urban100  | 25.42/ 0.771      |  22.04/ 0.607      | 
+### Quality for scale x4
 ---
     Trained on div2k, r=4
 ---
 | DataSet/Method        | PSNR/SSIM|
 | ------------- | -----:|
-| Set5      | 32.11/ 0.895      |
-| Set14     | 28.47/ 0.787      | 
-| BSD100    | 27.53/ 0.739      | 
-| Urban100    | 25.86/ 0.784      | 
+| Set5      | 32.05/ 0.897      |
+| Set14     | 28.54/ 0.789     | 
+| BSD100    | 27.51/ 0.743      | 
+| Urban100    | 25.83/ 0.785      | 
 ### Compare with other methods
 ![](https://github.com/opteroncx/SESR/raw/master/figures/f2.png)  
 ### Requirement
