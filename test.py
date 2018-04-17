@@ -126,7 +126,7 @@ def predict(img_read,save,convert,eva,name):
         save_figure(recon,name)
     if eva:
         #PSNR and SSIM
-        psnr_predicted = PSNR(im_gt_y, np.uint8(im_h_y),shave_border=opt.scale)
+        psnr_predicted = PSNR(np.uint8(im_gt_y), np.uint8(im_h_y),shave_border=opt.scale)
         ssim_predicted = pyssim.compute_ssim(im_gt_y, im_h_y)
         print("test psnr/ssim=%f/%f"%(psnr_predicted,ssim_predicted))
         return psnr_predicted,ssim_predicted
