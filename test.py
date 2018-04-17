@@ -162,7 +162,7 @@ def convert_rgb_to_y(image, jpeg_mode=False, max_value=255.0):
         xform = np.array([[0.299, 0.587, 0.114]])
         y_image = image.dot(xform.T)
     else:
-        xform = np.array([[65.481 / 256.0, 128.553 / 256.0, 24.966 / 256.0]])
+        xform = np.array([[65.738 / 256.0, 129.057 / 256.0, 25.064 / 256.0]])
         y_image = image.dot(xform.T) + (16.0 * max_value / 256.0)
 
     return y_image
@@ -178,7 +178,7 @@ def convert_rgb_to_ycbcr(image, jpeg_mode=False, max_value=255):
         ycbcr_image[:, :, [1, 2]] += max_value / 2
     else:
         xform = np.array(
-            [[65.481 / 256.0, 128.553 / 256.0, 24.966 / 256.0], [- 37.945 / 256.0, - 74.494 / 256.0, 112.439 / 256.0],
+            [[65.738 / 256.0, 129.057 / 256.0, 25.064 / 256.0], [- 37.945 / 256.0, - 74.494 / 256.0, 112.439 / 256.0],
              [112.439 / 256.0, - 94.154 / 256.0, - 18.285 / 256.0]])
         ycbcr_image = image.dot(xform.T)
         ycbcr_image[:, :, 0] += (16.0 * max_value / 256.0)
