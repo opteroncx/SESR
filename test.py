@@ -92,7 +92,7 @@ def predict(img_read,save,convert,eva,name):
             img_y=img_y[:,:,0]
             im_gt_y=im_gt_y[:,:,0]
         else:
-            img_y=getY(img_read)
+            img_y=convert_rgb_to_y(img_read)
     else:
         im_gt_y,img_y=img_read
         im_gt_y=im_gt_y.astype("float32")
