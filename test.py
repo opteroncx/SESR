@@ -144,9 +144,9 @@ def save_figure(img,name):
     if not os.path.exists(out_path):
         os.mkdir(out_path)
     print 'saved '+name
-    img = np.uint8(img)
-    im = Image.fromarray(img)
-    im.save(out_path+name[:-4]+'.png')
+    img_norm = cv2.normalize(img, img, alpha=0, beta=255, norm_type=cv2.NORM_MINMAX, dtype= cv2.CV_8U)
+    img_bgr = cv2.cvtColor(img_norm, cv2.COLOR_RGB2BGR)
+    cv2.imwrite(out_path+name[:-4]+'.png', img_bgr)
 
 def PSNR(pred, gt, shave_border=0):
     height, width = pred.shape[:2]
